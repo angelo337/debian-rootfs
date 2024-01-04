@@ -1,9 +1,9 @@
 # https://github.com/volumio/Build/issues/348
 
  You need to patch /usr/sbin/multistrap.
- Look for the line
+ Look for the line:
  $config_str .= " -o Apt::Get::AllowUnauthenticated=true"
- Just above it, add
+ Just above it, add:
  $config_str .= " -o Acquire::AllowInsecureRepositories=true";
 
 # debian-rootfs
