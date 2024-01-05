@@ -46,17 +46,28 @@ Once running on your target, the rootfs can be upgraded with apt-get commands.
 As examples, already built rootfs can be downloaded by clicking on the architecture name in the above list.  
 
 
-sudo dd if=/dev/zero of=debian12.img bs=1M count=350
+sudo dd if=/dev/zero of=debian12.img bs=1M count=
+
 MY_DEVICE=$(sudo losetup -f)
+
 echo $MY_DEVICE
+
 sudo losetup $MY_DEVICE debian12.img 
+
 sudo losetup $MY_DEVICE
+
 sudo mkfs -t ext4 -v $MY_DEVICE
+
 MY_LOCATION="/mnt/location"
+
 sudo mkdir $MY_LOCATION
+
 sudo mount -t ext4 $MY_DEVICE $MY_LOCATION
+
 df -h $MY_DEVICE
+
 sudo cp -p -R amd64-rootfs-20240105T025623Z/* $MY_LOCATION
+
 sudo umount $MY_LOCATION
 
 
