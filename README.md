@@ -45,6 +45,7 @@ Once running on your target, the rootfs can be upgraded with apt-get commands.
 
 As examples, already built rootfs can be downloaded by clicking on the architecture name in the above list.  
 
+## https://dzone.com/articles/loop-device-in-linux
 
 sudo dd if=/dev/zero of=debian12.img bs=1M count=
 
